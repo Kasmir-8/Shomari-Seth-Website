@@ -8,11 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="shomari-profile">
     <header class="header">
         <nav class="nav">
             <div class="nav-brand">
-                <h1>Shomari Taylor & Seth Shaw</h1>
+                <h1>Shomari Taylor</h1>
+                <span class="nav-subtitle">Research Profile</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -29,25 +30,40 @@
     </header>
 
     <main>
-        <section class="profile-hero">
+        <!-- New Header Section with Headshot and Personal Statement -->
+        <section class="profile-intro">
             <div class="container">
-                <div class="profile-header">
-                    <div class="profile-image-enhanced">
-                        <div class="profile-image-circle">
-                            <div class="profile-initial">S</div>
+                <div class="intro-layout">
+                    <div class="headshot-container">
+                        <div class="headshot-placeholder">
+                            <i class="fas fa-user"></i>
+                            <p>Headshot Photo</p>
                         </div>
-                        <div class="profile-image-accent"></div>
                     </div>
-                    <div class="profile-info">
-                        <h1 class="profile-title">Shomari Taylor</h1>
-                        <div class="profile-contact-quick">
+                    <div class="personal-statement">
+                        <h1 class="profile-name">Shomari Taylor</h1>
+                        <div class="statement-content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+                                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            </p>
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
+                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas 
+                                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.
+                            </p>
+                        </div>
+                        <div class="profile-actions">
                             <a href="mailto:shomari@example.com" class="btn btn-primary">
                                 <i class="fas fa-envelope"></i> Contact Me
                             </a>
-                            <a href="#cv-section" class="btn btn-secondary">
+                            <a href="#cv-section" class="btn btn-success">
                                 <i class="fas fa-download"></i> Download CV
                             </a>
-                            <a href="shomari-media.html" class="btn btn-primary">
+                            <a href="shomari-media.html" class="btn btn-warning">
                                 <i class="fas fa-photo-video"></i> View Media
                             </a>
                         </div>
@@ -59,70 +75,55 @@
         <section class="profile-content">
             <div class="container">
                 <div class="content-grid">
-                    <div class="content-card">
-                        <h3><i class="fas fa-user"></i> Personal Statement</h3>
-                        <p>
-                            As a dedicated researcher with a passion for advancing knowledge in my field, 
-                            I am committed to conducting rigorous, impactful research that contributes to 
-                            both academic understanding and practical applications. My work focuses on 
-                            innovative methodologies and collaborative approaches to complex research challenges.
-                        </p>
-                        <p>
-                            I believe in the power of interdisciplinary collaboration and strive to bridge 
-                            theoretical concepts with real-world applications. Through my research, I aim to 
-                            contribute meaningful insights that can inform policy, practice, and future 
-                            scholarly endeavors.
-                        </p>
-                    </div>
 
                     <div class="content-card">
                         <h3><i class="fas fa-graduation-cap"></i> Education & Background</h3>
                         <div class="education-item">
-                            <h4>Ph.D. in [Your Field]</h4>
-                            <p class="institution">[University Name] - [Year]</p>
-                            <p>Dissertation: "Advanced Research Methodologies in Contemporary Academic Settings"</p>
+                            <h4>Ph.D. in Lorem Ipsum</h4>
+                            <p class="institution">Lorem University - 2020</p>
+                            <p>Dissertation: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do"</p>
                         </div>
                         <div class="education-item">
-                            <h4>M.A. in [Your Field]</h4>
-                            <p class="institution">[University Name] - [Year]</p>
+                            <h4>M.A. in Lorem Studies</h4>
+                            <p class="institution">Ipsum Institute - 2017</p>
                         </div>
                         <div class="education-item">
-                            <h4>B.A. in [Your Field]</h4>
-                            <p class="institution">[University Name] - [Year]</p>
+                            <h4>B.A. in Lorem Research</h4>
+                            <p class="institution">Dolor University - 2015</p>
                         </div>
                     </div>
 
                     <div class="content-card">
                         <h3><i class="fas fa-research"></i> Research Interests</h3>
                         <ul class="research-interests">
-                            <li>Advanced Research Methodologies</li>
-                            <li>Interdisciplinary Collaboration</li>
-                            <li>Data Analysis and Interpretation</li>
-                            <li>Academic Policy Development</li>
-                            <li>Innovative Teaching Approaches</li>
-                            <li>Community-Engaged Research</li>
+                            <li>Lorem ipsum dolor sit amet</li>
+                            <li>Consectetur adipiscing elit</li>
+                            <li>Sed do eiusmod tempor incididunt</li>
+                            <li>Ut labore et dolore magna</li>
+                            <li>Aliqua enim ad minim veniam</li>
+                            <li>Quis nostrud exercitation ullamco</li>
                         </ul>
                     </div>
 
                     <div class="content-card">
                         <h3><i class="fas fa-award"></i> Recent Achievements</h3>
                         <ul class="achievements">
-                            <li>Outstanding Research Award - [Institution] (2025)</li>
-                            <li>Best Paper Award - [Conference Name] (2024)</li>
-                            <li>Research Grant Recipient - [Funding Agency] (2024)</li>
-                            <li>Invited Speaker - [Event Name] (2024)</li>
-                            <li>Editorial Board Member - [Journal Name] (2023)</li>
+                            <li>Lorem Ipsum Award - Dolor Institution (2025)</li>
+                            <li>Best Lorem Paper - Consectetur Conference (2024)</li>
+                            <li>Research Grant - Adipiscing Foundation (2024)</li>
+                            <li>Invited Speaker - Elit Symposium (2024)</li>
+                            <li>Editorial Board - Sed Journal (2023)</li>
                         </ul>
                     </div>
 
                     <div class="content-card" id="cv-section">
                         <h3><i class="fas fa-file-alt"></i> Curriculum Vitae</h3>
-                        <p>Download my complete academic CV including publications, presentations, and professional experience.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <div class="cv-downloads">
-                            <a href="#" class="btn btn-primary" download>
+                            <a href="#" class="btn btn-success" download>
                                 <i class="fas fa-download"></i> Download Full CV (PDF)
                             </a>
-                            <a href="#" class="btn btn-outline" download>
+                            <a href="#" class="btn btn-success" download>
                                 <i class="fas fa-file-word"></i> Download Resume (Word)
                             </a>
                         </div>

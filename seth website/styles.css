@@ -10,6 +10,9 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8fafc;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .container {
@@ -43,6 +46,15 @@ body {
     color: #2563eb;
     font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.nav-subtitle {
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 400;
+    display: block;
+    line-height: 1;
 }
 
 .nav-menu {
@@ -78,10 +90,41 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 120px 0 80px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
     color: white;
     text-align: center;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+    pointer-events: none;
 }
 
 .hero-title {
@@ -98,38 +141,72 @@ body {
 
 .researcher-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 800px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+    height: 100%;
+    perspective: 1000px;
 }
 
 .researcher-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 4rem 2rem;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 65vh;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.researcher-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.researcher-card:hover::before {
+    left: 100%;
 }
 
 .researcher-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.25);
 }
 
-.card-image {
-    margin-bottom: 1rem;
+.shomari-card:hover {
+    box-shadow: 0 30px 60px rgba(16, 185, 129, 0.4);
 }
 
-.card-image i {
-    font-size: 3rem;
-    color: #fbbf24;
+.seth-card:hover {
+    box-shadow: 0 30px 60px rgba(59, 130, 246, 0.4);
 }
+
 
 .researcher-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #f1f5f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
 }
 
 /* Buttons */
@@ -146,13 +223,140 @@ body {
 }
 
 .btn-primary {
-    background: #2563eb;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
     color: white;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
 }
 
 .btn-primary:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #5b21b6, #7c3aed);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary i {
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover i {
+    transform: translateX(5px);
+}
+
+/* Green CV Download Buttons */
+.btn-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-success::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-success:hover::before {
+    left: 100%;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+}
+
+.btn-success i {
+    transition: transform 0.3s ease;
+}
+
+.btn-success:hover i {
+    transform: translateX(5px);
+}
+
+/* Orange Media Buttons */
+.btn-warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-warning::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-warning:hover::before {
+    left: 100%;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
+}
+
+.btn-warning i {
+    transition: transform 0.3s ease;
+}
+
+.btn-warning:hover i {
+    transform: translateX(5px);
 }
 
 .btn-secondary {
@@ -219,6 +423,90 @@ body {
 }
 
 /* Profile Pages */
+.profile-intro {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 120px 0 80px;
+}
+
+.intro-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.headshot-container {
+    display: flex;
+    justify-content: center;
+}
+
+.headshot-placeholder {
+    width: 300px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.headshot-placeholder:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.02);
+}
+
+.headshot-placeholder i {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+}
+
+.headshot-placeholder p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.personal-statement {
+    padding: 2rem 0;
+}
+
+.profile-name {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #ffffff, #f1f5f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statement-content {
+    margin-bottom: 3rem;
+}
+
+.statement-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 .profile-hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -856,6 +1144,286 @@ body {
     margin-top: 3rem;
 }
 
+/* Enhanced Shomari Profile Styles */
+.shomari-profile .profile-intro {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.shomari-profile .profile-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.shomari-profile .headshot-placeholder {
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.shomari-profile .headshot-placeholder::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: rotate 8s linear infinite;
+}
+
+.shomari-profile .headshot-placeholder:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.shomari-profile .profile-name {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1));
+}
+
+.shomari-profile .content-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                0 2px 16px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.shomari-profile .content-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.shomari-profile .content-card:hover::before {
+    opacity: 1;
+}
+
+.shomari-profile .content-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+                0 8px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(102, 126, 234, 0.2);
+}
+
+.shomari-profile .content-card h3 {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.shomari-profile .content-card h3 i {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 1px 2px rgba(102, 126, 234, 0.2));
+}
+
+.shomari-profile .education-item,
+.shomari-profile .research-interests li,
+.shomari-profile .achievements li {
+    transition: all 0.3s ease;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    position: relative;
+}
+
+.shomari-profile .education-item:hover,
+.shomari-profile .research-interests li:hover,
+.shomari-profile .achievements li:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.shomari-profile .btn-primary,
+.shomari-profile .btn-success,
+.shomari-profile .btn-warning {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.shomari-profile .btn-primary:hover,
+.shomari-profile .btn-success:hover,
+.shomari-profile .btn-warning:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Seth Profile Styles */
+.seth-profile .profile-intro {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 50%, #06b6d4 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.seth-profile .profile-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.seth-profile .headshot-placeholder {
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.seth-profile .headshot-placeholder::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: rotate 8s linear infinite reverse;
+}
+
+.seth-profile .headshot-placeholder:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.seth-profile .profile-name {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #dbeafe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1));
+}
+
+.seth-profile .content-card {
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                0 2px 16px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.seth-profile .content-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #1e40af, #06b6d4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.seth-profile .content-card:hover::before {
+    opacity: 1;
+}
+
+.seth-profile .content-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+                0 8px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+.seth-profile .content-card h3 {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.seth-profile .content-card h3 i {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 1px 2px rgba(59, 130, 246, 0.2));
+}
+
+.seth-profile .education-item,
+.seth-profile .research-interests li,
+.seth-profile .achievements li {
+    transition: all 0.3s ease;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    position: relative;
+}
+
+.seth-profile .education-item:hover,
+.seth-profile .research-interests li:hover,
+.seth-profile .achievements li:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(30, 64, 175, 0.05));
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.seth-profile .btn-primary,
+.seth-profile .btn-success,
+.seth-profile .btn-warning {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.seth-profile .btn-primary:hover,
+.seth-profile .btn-success:hover,
+.seth-profile .btn-warning:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
 /* Individual Project Sections */
 .project-highlights {
     margin: 1rem 0;
@@ -901,6 +1469,36 @@ body {
 }
 
 /* Media Page Styles */
+.media-page {
+    padding: 140px 0 80px;
+    background: white;
+    min-height: 100vh;
+}
+
+.media-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.media-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.back-button {
+    flex-shrink: 0;
+}
+
 .media-subtitle {
     font-size: 1.2rem;
     opacity: 0.9;
@@ -1212,6 +1810,14 @@ body {
     .hamburger.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+    
+    .nav-brand h1 {
+        font-size: 1.25rem;
+    }
+    
+    .nav-subtitle {
+        font-size: 0.75rem;
+    }
 
     .hero-title {
         font-size: 2rem;
@@ -1219,6 +1825,25 @@ body {
 
     .researcher-cards {
         grid-template-columns: 1fr;
+        gap: 3rem;
+        max-width: 500px;
+    }
+    
+    .researcher-card {
+        min-height: 50vh;
+        padding: 3rem 1.5rem;
+    }
+    
+    .researcher-card h3 {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .btn-primary,
+    .btn-success,
+    .btn-warning {
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
 
     .content-grid {
@@ -1228,6 +1853,31 @@ body {
     .profile-contact-quick {
         flex-direction: column;
         align-items: center;
+    }
+
+    .intro-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .headshot-placeholder {
+        width: 250px;
+        height: 320px;
+        margin: 0 auto;
+    }
+
+    .profile-name {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .statement-content p {
+        font-size: 1.1rem;
+    }
+
+    .profile-actions {
+        justify-content: center;
     }
 
     .profile-header {
@@ -1309,6 +1959,39 @@ body {
 
     .media-modal-info {
         padding: 1.5rem;
+    }
+    
+    .media-header {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .media-title {
+        font-size: 2rem;
+    }
+    
+    /* Enhanced Shomari Mobile Styles */
+    .shomari-profile .content-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    .shomari-profile .education-item:hover,
+    .shomari-profile .research-interests li:hover,
+    .shomari-profile .achievements li:hover {
+        transform: translateX(4px);
+    }
+    
+    /* Enhanced Seth Mobile Styles */
+    .seth-profile .content-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    .seth-profile .education-item:hover,
+    .seth-profile .research-interests li:hover,
+    .seth-profile .achievements li:hover {
+        transform: translateX(4px);
     }
 }
 
