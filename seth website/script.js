@@ -66,6 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
+
+    // Ensure Contact Me button works correctly
+    const contactBtn = document.getElementById('contactEmailBtn');
+    if (contactBtn) {
+        contactBtn.addEventListener('click', function(e) {
+            // Allow the default mailto behavior
+            e.stopPropagation();
+            window.location.href = 'mailto:sshaw33@vols.utk.edu';
+        });
+    }
 });
 
 // Contact form handling (if present)

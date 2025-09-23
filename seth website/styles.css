@@ -431,16 +431,19 @@ body {
 
 .intro-layout {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: center;
+    grid-template-columns: 1.2fr 1.8fr;
+    gap: 3rem;
+    align-items: start;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem 0;
 }
 
 .headshot-container {
     display: flex;
     justify-content: center;
+    position: sticky;
+    top: 2rem;
 }
 
 .headshot-placeholder {
@@ -475,30 +478,57 @@ body {
     font-weight: 500;
 }
 
+.headshot-image {
+    width: 380px;
+    height: 480px;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.headshot-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
 .personal-statement {
-    padding: 2rem 0;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 480px;
 }
 
 .profile-name {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     background: linear-gradient(135deg, #ffffff, #f1f5f9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.1;
 }
 
 .statement-content {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .statement-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
 .profile-actions {
@@ -1857,8 +1887,26 @@ body {
 
     .intro-layout {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
         text-align: center;
+        padding: 1rem 0;
+    }
+
+    .headshot-container {
+        position: static;
+        order: 1;
+    }
+
+    .headshot-image {
+        width: 280px;
+        height: 350px;
+        border-radius: 15px;
+    }
+
+    .personal-statement {
+        order: 2;
+        min-height: auto;
+        padding: 0;
     }
 
     .headshot-placeholder {
