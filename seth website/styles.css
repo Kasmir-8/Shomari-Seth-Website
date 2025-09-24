@@ -1050,6 +1050,19 @@ body {
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+/* Shomari headshot specific styling - zoom in on face */
+.shomari-profile .headshot-image {
+    object-fit: cover;
+    object-position: center 20%;
+    transform: scale(1.15);
+}
+
+.shomari-profile .headshot-image:hover {
+    transform: scale(1.18);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
 .shomari-profile .profile-name {
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
     -webkit-background-clip: text;
