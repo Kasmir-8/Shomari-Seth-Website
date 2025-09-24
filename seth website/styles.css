@@ -381,18 +381,13 @@ body {
 }
 
 /* Content Sections */
-.projects-preview,
-.deliverables-preview {
+.projects-preview {
     padding: 80px 0;
     text-align: center;
-}
-
-.projects-preview {
     background: white;
 }
 
-.projects-preview h2,
-.deliverables-preview h2 {
+.projects-preview h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: #1f2937;
@@ -631,47 +626,6 @@ body {
 .content-card p {
     color: #64748b;
     margin-bottom: 1.5rem;
-}
-
-/* Deliverables Grid */
-.deliverables-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.deliverable-item {
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.deliverable-item:hover {
-    transform: translateY(-5px);
-}
-
-.deliverable-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.deliverable-type {
-    background: #2563eb;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-.deliverable-date {
-    color: #64748b;
-    font-size: 0.9rem;
 }
 
 /* Footer */
@@ -1046,132 +1000,6 @@ body {
 .btn-sm {
     padding: 8px 16px;
     font-size: 0.875rem;
-}
-
-/* Deliverables Styles */
-.deliverables-stats {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-number {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #fbbf24;
-    margin-bottom: 0.25rem;
-}
-
-.stat-label {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.875rem;
-}
-
-.deliverables-filter {
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
-.deliverables-filter h2 {
-    margin-bottom: 1.5rem;
-    color: #1f2937;
-}
-
-.filter-buttons {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 0.5rem 1rem;
-    border: 2px solid #e5e7eb;
-    background: white;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    color: #6b7280;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    border-color: #2563eb;
-    background: #2563eb;
-    color: white;
-}
-
-.deliverable-type {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.deliverable-type.publication {
-    background: #10b981;
-}
-
-.deliverable-type.presentation {
-    background: #f59e0b;
-}
-
-.deliverable-type.report {
-    background: #8b5cf6;
-}
-
-.deliverable-type.dataset {
-    background: #ef4444;
-}
-
-.deliverable-item h3 {
-    color: #1f2937;
-    margin: 1rem 0 0.5rem;
-    font-size: 1.1rem;
-    line-height: 1.4;
-}
-
-.deliverable-authors {
-    color: #2563eb;
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem;
-}
-
-.deliverable-description {
-    color: #4b5563;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.deliverable-journal {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #6b7280;
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-}
-
-.deliverable-journal i {
-    color: #9ca3af;
-}
-
-.deliverable-actions {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.load-more {
-    text-align: center;
-    margin-top: 3rem;
 }
 
 /* Enhanced Shomari Profile Styles */
@@ -1953,12 +1781,6 @@ body {
 
     .cv-downloads {
         flex-direction: column;
-    }
-
-    .deliverables-stats {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
     }
 
     .contact-buttons {

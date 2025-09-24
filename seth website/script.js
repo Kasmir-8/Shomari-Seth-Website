@@ -105,32 +105,4 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString(undefined, options);
 }
 
-// Dynamic content loading for deliverables
-function loadDeliverables() {
-    // This would typically fetch from an API or CMS
-    const deliverables = [
-        {
-            title: "Research Paper: Advanced Methodologies",
-            type: "Publication",
-            date: "2025-09-01",
-            description: "Comprehensive study on innovative research methodologies in academic settings.",
-            link: "#"
-        },
-        {
-            title: "Conference Presentation: Data Analysis Trends",
-            type: "Presentation",
-            date: "2025-08-15",
-            description: "Keynote presentation at the International Research Conference.",
-            link: "#"
-        },
-        {
-            title: "Collaborative Report: Zefi Project Findings",
-            type: "Report",
-            date: "2025-07-30",
-            description: "Initial findings and recommendations from the ongoing Zefi research project.",
-            link: "#"
-        }
-    ];
-    
-    return deliverables;
-}
+
