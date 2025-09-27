@@ -72,6 +72,34 @@
             <div class="container">
                 <div class="content-grid">
 
+                    <div class="content-card">
+                        <h3>Poster</h3>
+                        <div class="poster-container">
+                            <div class="poster-image-container">
+                                <img src="SPS SeCAB Male Sociality Poster Smaller.png" alt="Seth Shaw Research Poster" class="poster-image" onclick="openSethPosterModal()">
+                                <div class="poster-overlay">
+                                    <i class="fas fa-expand"></i> Click to enlarge
+                                </div>
+                            </div>
+                            <div class="poster-actions">
+                                <button onclick="openSethPosterModal()" class="btn btn-outline">
+                                    <i class="fas fa-expand"></i> View Full Size
+                                </button>
+                                <a href="SPS SeCAB Male Sociality Poster Smaller.pptx" download class="btn btn-outline">
+                                    <i class="fas fa-download"></i> Download PowerPoint
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seth Poster Modal -->
+                    <div id="sethPosterModal" class="poster-modal" onclick="closeSethPosterModal()">
+                        <div class="poster-modal-content">
+                            <span class="poster-close" onclick="closeSethPosterModal()">&times;</span>
+                            <img src="SPS SeCAB Male Sociality Poster Smaller.png" alt="Seth Shaw Research Poster" class="poster-modal-image">
+                        </div>
+                    </div>
+
                     <div class="content-card" id="cv-section">
                         <h3><i class="fas fa-file-alt"></i> Curriculum Vitae</h3>
                         <p>Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.</p>

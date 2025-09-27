@@ -105,4 +105,126 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString(undefined, options);
 }
 
+// Poster Modal Functions - Shomari
+function openPosterModal() {
+    console.log('Opening poster modal...'); // Debug log
+    const modal = document.getElementById('posterModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        // Trigger animation after a brief delay
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
+        console.log('Modal opened successfully');
+    } else {
+        console.error('Modal element not found!');
+    }
+}
+
+function closePosterModal() {
+    console.log('Closing poster modal...'); // Debug log
+    const modal = document.getElementById('posterModal');
+    if (modal) {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }, 300); // Wait for animation to complete
+        console.log('Modal closed successfully');
+    }
+}
+
+// Poster Modal Functions - Seth
+function openSethPosterModal() {
+    console.log('Opening Seth poster modal...'); // Debug log
+    const modal = document.getElementById('sethPosterModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        // Trigger animation after a brief delay
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
+        console.log('Seth modal opened successfully');
+    } else {
+        console.error('Seth modal element not found!');
+    }
+}
+
+function closeSethPosterModal() {
+    console.log('Closing Seth poster modal...'); // Debug log
+    const modal = document.getElementById('sethPosterModal');
+    if (modal) {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }, 300); // Wait for animation to complete
+        console.log('Seth modal closed successfully');
+    }
+}
+
+// Poster Modal Event Listeners
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, setting up modals...'); // Debug log
+    
+    // Shomari's modal
+    const shomariModal = document.getElementById('posterModal');
+    const shomariPosterImage = document.querySelector('.poster-image');
+    
+    // Seth's modal
+    const sethModal = document.getElementById('sethPosterModal');
+    const sethPosterImage = document.querySelector('img[src="SPS SeCAB Male Sociality Poster Smaller.png"]');
+    
+    console.log('Shomari modal found:', !!shomariModal);
+    console.log('Seth modal found:', !!sethModal);
+    
+    // Shomari modal setup
+    if (shomariModal) {
+        shomariModal.addEventListener('click', function(e) {
+            if (e.target === shomariModal) {
+                closePosterModal();
+            }
+        });
+        
+        const shomariModalContent = shomariModal.querySelector('.poster-modal-content');
+        if (shomariModalContent) {
+            shomariModalContent.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+    }
+    
+    // Seth modal setup
+    if (sethModal) {
+        sethModal.addEventListener('click', function(e) {
+            if (e.target === sethModal) {
+                closeSethPosterModal();
+            }
+        });
+        
+        const sethModalContent = sethModal.querySelector('.poster-modal-content');
+        if (sethModalContent) {
+            sethModalContent.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+    }
+    
+    // Close modals with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (shomariModal && shomariModal.style.display === 'block') {
+                closePosterModal();
+            }
+            if (sethModal && sethModal.style.display === 'block') {
+                closeSethPosterModal();
+            }
+        }
+    });
+});
+
+
+
 

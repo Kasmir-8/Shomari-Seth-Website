@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Thumbnail Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        #thumbnail-canvas { border: 1px solid #ccc; margin: 20px 0; }
+        button { padding: 10px 20px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>PDF Thumbnail Generator</h1>
+    <p>This tool creates a simple thumbnail representation of the research poster.</p>
+    
+    <canvas id="thumbnail-canvas" width="400" height="500"></canvas>
+    <br>
+    <button onclick="generateThumbnail()">Generate Thumbnail</button>
+    <button onclick="downloadThumbnail()">Download as PNG</button>
+    
+    <script>
+        function generateThumbnail() {
+            const canvas = document.getElementById('thumbnail-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, 400, 500);
+            
+            // White background
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, 400, 500);
+            
+            // Border
+            ctx.strokeStyle = '#333333';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(2, 2, 396, 496);
+            
+            // Header section
+            ctx.fillStyle = '#2563eb';
+            ctx.fillRect(20, 20, 360, 80);
+            
+            // Title text
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Research Poster', 200, 50);
+            ctx.font = '18px Arial';
+            ctx.fillText('Shomari Taylor', 200, 80);
+            
+            // Content sections
+            ctx.fillStyle = '#f8f9fa';
+            ctx.fillRect(30, 120, 340, 90);
+            ctx.fillRect(30, 230, 160, 90);
+            ctx.fillRect(210, 230, 160, 90);
+            ctx.fillRect(30, 340, 340, 90);
+            ctx.fillRect(30, 450, 340, 30);
+            
+            // Section headers
+            ctx.fillStyle = '#333333';
+            ctx.font = 'bold 14px Arial';
+            ctx.textAlign = 'left';
+            ctx.fillText('Abstract', 40, 140);
+            ctx.fillText('Methods', 40, 250);
+            ctx.fillText('Results', 220, 250);
+            ctx.fillText('Conclusion', 40, 360);
+            ctx.fillText('References', 40, 470);
+            
+            // Add some placeholder content lines
+            ctx.font = '10px Arial';
+            ctx.fillStyle = '#666666';
+            for (let i = 0; i < 5; i++) {
+                ctx.fillText('████████████████████████████', 40, 160 + i * 12);
+            }
+            for (let i = 0; i < 3; i++) {
+                ctx.fillText('██████████████', 40, 270 + i * 12);
+                ctx.fillText('██████████████', 220, 270 + i * 12);
+            }
+            for (let i = 0; i < 5; i++) {
+                ctx.fillText('████████████████████████████', 40, 380 + i * 12);
+            }
+        }
+        
+        function downloadThumbnail() {
+            const canvas = document.getElementById('thumbnail-canvas');
+            const link = document.createElement('a');
+            link.download = 'shomari-poster-thumbnail.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generate thumbnail on page load
+        generateThumbnail();
+    </script>
+</body>
+</html>

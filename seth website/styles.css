@@ -1998,3 +1998,189 @@ body {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
 }
+
+/* Poster Section Styling */
+.poster-container {
+    margin-top: 1rem;
+}
+
+/* Poster Container Styling */
+.poster-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.poster-image-container {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.poster-image-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.poster-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.poster-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    gap: 0.5rem;
+    border-radius: 10px;
+}
+
+.poster-image-container:hover .poster-overlay {
+    opacity: 1;
+}
+
+/* Poster Modal Styles */
+.poster-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.poster-modal.show {
+    opacity: 1;
+}
+
+.poster-modal-content {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.poster-modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    cursor: default;
+}
+
+.poster-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 5px;
+}
+
+.poster-close:hover {
+    color: #fbbf24;
+}
+
+.poster-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.poster-actions .btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.poster-actions .btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.poster-actions .btn-primary {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.poster-actions .btn-primary:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+/* Responsive Design for Research Layout */
+
+@media (max-width: 768px) {
+    .poster-section {
+        padding: 1rem;
+    }
+    
+    .poster-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .poster-actions .btn {
+        width: 200px;
+        justify-content: center;
+    }
+    
+    .poster-modal-content {
+        width: 95%;
+        height: 95%;
+        margin: 1% auto;
+    }
+    
+    .poster-close {
+        top: -30px;
+        font-size: 24px;
+    }
+}
