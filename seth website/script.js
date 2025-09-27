@@ -112,10 +112,9 @@ function openPosterModal() {
     if (modal) {
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        // Trigger animation after a brief delay
-        setTimeout(() => {
-            modal.classList.add('show');
-        }, 10);
+        // Force reflow and then add show class
+        modal.offsetHeight;
+        modal.classList.add('show');
         console.log('Modal opened successfully');
     } else {
         console.error('Modal element not found!');
@@ -180,9 +179,24 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Shomari modal found:', !!shomariModal);
     console.log('Seth modal found:', !!sethModal);
     
+    // Add click event listeners to poster elements
+    const posterImage = document.querySelector('.poster-image');
+    const posterButton = document.querySelector('button[onclick="openPosterModal()"]');
+    
+    if (posterImage) {
+        posterImage.addEventListener('click', openPosterModal);
+        console.log('Poster image click listener added');
+    }
+    
+    if (posterButton) {
+        posterButton.addEventListener('click', openPosterModal);
+        console.log('Poster button click listener added');
+    }
+    
     // Shomari modal setup
     if (shomariModal) {
         shomariModal.addEventListener('click', function(e) {
+            console.log('Modal backdrop clicked'); // Debug
             if (e.target === shomariModal) {
                 closePosterModal();
             }
@@ -192,6 +206,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (shomariModalContent) {
             shomariModalContent.addEventListener('click', function(e) {
                 e.stopPropagation();
+            });
+        }
+        
+        // Also ensure the image itself can be clicked to close
+        const modalImage = shomariModal.querySelector('.poster-modal-image');
+        if (modalImage) {
+            modalImage.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closePosterModal();
             });
         }
     }
