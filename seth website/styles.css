@@ -607,6 +607,8 @@ body {
 .content-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: auto;
+    align-items: start;
     gap: 3rem;
 }
 
