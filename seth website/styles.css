@@ -1803,6 +1803,14 @@ body.reduced-data .header {
         transform: translateY(-10px) scale(0.99);
     }
 
+    /* Keep the profile floating bar stable on mobile during page handoff. */
+    .profile-page.profile-entry-prep .profile-float-nav,
+    .profile-page.profile-entry-play .profile-float-nav {
+        opacity: 1;
+        transform: translateY(0);
+        filter: none;
+    }
+
     .home-page .nav-brand h1,
     .home-page .nav-link,
     .home-page .orbit-chip,
@@ -1961,8 +1969,8 @@ body.reduced-data .header {
     }
 
     .researcher-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.75rem;
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
     }
 
     .personal-statement,
@@ -2004,7 +2012,7 @@ body.reduced-data .header {
     }
 
     .home-page .stage-panel {
-        min-height: 540px;
+        min-height: 700px;
     }
 
     .home-page .aviary-stage {
@@ -2016,7 +2024,9 @@ body.reduced-data .header {
     }
 
     .home-page .researcher-cards {
-        gap: 0.75rem;
+        grid-template-columns: 1fr;
+        width: min(360px, 100%);
+        gap: 0.85rem;
     }
 
     .home-page .researcher-card {
