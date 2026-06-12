@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Media gallery for Seth Shaw's avian research projects.">
     <title>Seth Shaw Media - Swallow Finch Research</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 </head>
 <body>
     <header class="header">
@@ -44,7 +47,7 @@
                 <div class="media-grid">
                     <div class="media-item">
                         <div class="media-thumbnail">
-                            <video class="media-video" controls preload="metadata">
+                            <video class="media-video" controls preload="metadata" playsinline>
                                 <source src="Physical Contact Clip.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -59,7 +62,7 @@
                     
                     <div class="media-item">
                         <div class="media-thumbnail">
-                            <video class="media-video" controls preload="metadata">
+                            <video class="media-video" controls preload="metadata" playsinline>
                                 <source src="Panting Example Clip.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -83,6 +86,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

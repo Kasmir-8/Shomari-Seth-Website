@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Seth Shaw's research profile in avian behavior, ecology, and thermal physiology.">
     <title>Seth Shaw - Swallow Finch Research</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 </head>
 <body class="profile-page seth-profile">
     <script>
@@ -46,7 +49,7 @@
             <div class="container">
                 <div class="intro-layout">
                     <div class="headshot-container">
-                        <img src="2025_0923_05293900.jpg" alt="Seth Shaw" class="headshot-image">
+                        <img src="2025_0923_05293900.jpg" alt="Seth Shaw" class="headshot-image" loading="eager" decoding="async" fetchpriority="high">
                     </div>
                     <div class="personal-statement">
                         <h1 class="profile-name">Seth Shaw</h1>
@@ -88,7 +91,7 @@
                         <h3>Poster</h3>
                         <div class="poster-container">
                             <div class="poster-image-container" onclick="openSethPosterModal()">
-                                <img src="SPS SeCAB Male Sociality Poster Smaller.png" alt="Seth Shaw Research Poster" class="poster-image" onclick="openSethPosterModal()">
+                                <img src="SPS SeCAB Male Sociality Poster Smaller.png" alt="Seth Shaw Research Poster" class="poster-image" loading="lazy" decoding="async" fetchpriority="low" onclick="openSethPosterModal()">
                                 <div class="poster-overlay">
                                     <i class="fas fa-expand"></i> Click to enlarge
                                 </div>
@@ -108,7 +111,7 @@
                     <div id="sethPosterModal" class="poster-modal" onclick="closeSethPosterModal()">
                         <div class="poster-modal-content">
                             <span class="poster-close" onclick="closeSethPosterModal()">&times;</span>
-                            <img src="SPS SeCAB Male Sociality Poster Smaller.png" alt="Seth Shaw Research Poster" class="poster-modal-image">
+                            <img src="SPS SeCAB Male Sociality Poster Smaller.png" alt="Seth Shaw Research Poster" class="poster-modal-image" loading="lazy" decoding="async" fetchpriority="low">
                         </div>
                     </div>
 
@@ -156,6 +159,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

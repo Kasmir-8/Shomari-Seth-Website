@@ -1187,6 +1187,8 @@ body::after {
     padding: 1.35rem;
     box-shadow: var(--shadow-soft);
     transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.24s ease;
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
 }
 
 .content-card:nth-child(odd) {
@@ -1378,6 +1380,8 @@ body::after {
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
+    content-visibility: auto;
+    contain-intrinsic-size: 520px;
 }
 
 .media-item:nth-child(odd) {
@@ -1446,6 +1450,40 @@ body::after {
 .media-type.photo {
     background: rgba(31, 111, 139, 0.2);
     color: #0f4f63;
+}
+
+body.reduced-data {
+    background:
+        radial-gradient(900px 540px at -10% -10%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 60%),
+        linear-gradient(160deg, var(--bg-sky) 0%, var(--bg-cream) 58%, #f9fbfd 100%);
+}
+
+body.reduced-data::after {
+    animation: none;
+    filter: blur(6px);
+}
+
+body.reduced-data .page-bird,
+body.reduced-data .aviary-stage,
+body.reduced-data .flight-path,
+body.reduced-data .path-c,
+body.reduced-data .hero::before,
+body.reduced-data .hero-visual,
+body.reduced-data .pulse-ring,
+body.reduced-data .drift-dot,
+body.reduced-data .hero-line {
+    display: none !important;
+}
+
+body.reduced-data .hero-content,
+body.reduced-data .researcher-card,
+body.reduced-data .content-card,
+body.reduced-data .media-item,
+body.reduced-data .btn,
+body.reduced-data .profile-float-nav,
+body.reduced-data .header {
+    transition: none !important;
+    animation: none !important;
 }
 
 .video-grid {

@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shomari Taylor's research profile in avian behavior, machine learning, and thermal ecology.">
     <title>Shomari Taylor - Swallow Finch Research</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 </head>
 <body class="profile-page shomari-profile">
     <script>
@@ -46,7 +49,7 @@
             <div class="container">
                 <div class="intro-layout">
                     <div class="headshot-container">
-                        <img src="DSCF4650.JPG" alt="Shomari Taylor" class="headshot-image">
+                        <img src="DSCF4650.JPG" alt="Shomari Taylor" class="headshot-image" loading="eager" decoding="async" fetchpriority="high">
                     </div>
                     <div class="personal-statement">
                         <h1 class="profile-name">Shomari Taylor</h1>
@@ -88,7 +91,7 @@
                         <div class="media-gallery">
                             <div class="video-grid">
                                 <div class="video-item">
-                                    <video controls preload="metadata" poster="">
+                                    <video controls preload="metadata" poster="" playsinline>
                                         <source src="11-1.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
@@ -96,7 +99,7 @@
                                 </div>
                                 
                                 <div class="video-item">
-                                    <video controls preload="metadata" poster="">
+                                    <video controls preload="metadata" poster="" playsinline>
                                         <source src="22.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
@@ -104,7 +107,7 @@
                                 </div>
                                 
                                 <div class="video-item">
-                                    <video controls preload="metadata" poster="">
+                                    <video controls preload="metadata" poster="" playsinline>
                                         <source src="33.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
@@ -112,7 +115,7 @@
                                 </div>
                                 
                                 <div class="video-item">
-                                    <video controls preload="metadata" poster="">
+                                    <video controls preload="metadata" poster="" playsinline>
                                         <source src="121.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
@@ -120,7 +123,7 @@
                                 </div>
                                 
                                 <div class="video-item">
-                                    <video controls preload="metadata" poster="">
+                                    <video controls preload="metadata" poster="" playsinline>
                                         <source src="16.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
@@ -138,7 +141,7 @@
                         <h3>Poster</h3>
                         <div class="poster-container">
                             <div class="poster-image-container" onclick="openPosterModal()">
-                                <img src="Shomari_Taylor_FIinal_Draft (3)-1.png" alt="Shomari Taylor Research Poster" class="poster-image" onclick="openPosterModal()">
+                                <img src="Shomari_Taylor_FIinal_Draft (3)-1.png" alt="Shomari Taylor Research Poster" class="poster-image" loading="lazy" decoding="async" fetchpriority="low" onclick="openPosterModal()">
                                 <div class="poster-overlay">
                                     <i class="fas fa-expand"></i> Click to enlarge
                                 </div>
@@ -158,7 +161,7 @@
                     <div id="posterModal" class="poster-modal" onclick="closePosterModal()">
                         <div class="poster-modal-content">
                             <span class="poster-close" onclick="closePosterModal()">&times;</span>
-                            <img src="Shomari_Taylor_FIinal_Draft (3)-1.png" alt="Shomari Taylor Research Poster" class="poster-modal-image">
+                            <img src="Shomari_Taylor_FIinal_Draft (3)-1.png" alt="Shomari Taylor Research Poster" class="poster-modal-image" loading="lazy" decoding="async" fetchpriority="low">
                         </div>
                     </div>
 
@@ -187,6 +190,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

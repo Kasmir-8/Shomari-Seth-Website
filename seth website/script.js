@@ -64,6 +64,36 @@ function handleContactForm(event) {
 window.handleContactForm = handleContactForm;
 
 document.addEventListener('DOMContentLoaded', () => {
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const constrainedNetworkTypes = new Set(['slow-2g', '2g', '3g']);
+    const shouldReduceData = Boolean(connection && (connection.saveData || constrainedNetworkTypes.has(connection.effectiveType)));
+
+    if (shouldReduceData) {
+        document.body.classList.add('reduced-data');
+    }
+
+    document.querySelectorAll('img').forEach((img) => {
+        if (!img.getAttribute('decoding')) {
+            img.setAttribute('decoding', 'async');
+        }
+
+        if (!img.getAttribute('loading')) {
+            const isCritical = Boolean(img.closest('.headshot-container'));
+            img.setAttribute('loading', isCritical ? 'eager' : 'lazy');
+        }
+
+        if (!img.getAttribute('fetchpriority')) {
+            const isCritical = Boolean(img.closest('.headshot-container'));
+            img.setAttribute('fetchpriority', isCritical ? 'high' : 'low');
+        }
+    });
+
+    if (shouldReduceData) {
+        document.querySelectorAll('video').forEach((video) => {
+            video.preload = 'none';
+        });
+    }
+
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
