@@ -3,36 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shomari Taylor & Seth Shaw</title>
+    <title>Shomari + Seth | Research Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="home-page">
+    <script>
+        (function () {
+            try {
+                if (sessionStorage.getItem('homeEntryFromNav') === '1') {
+                    document.body.classList.add('home-entry-prep');
+                    window.__homeEntryFromNav = true;
+                    sessionStorage.removeItem('homeEntryFromNav');
+                }
+            } catch (_) {}
+        })();
+    </script>
+    <div class="home-entry-wash" aria-hidden="true"></div>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <h1>Shomari + Seth</h1>
+                <span class="nav-subtitle">Research Portfolio</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="shomari.html" class="nav-link">Shomari</a></li>
+                <li><a href="seth.html" class="nav-link">Seth</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
     <main>
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <div class="researcher-cards">
-                        <div class="researcher-card shomari-card">
-                            <h3>Shomari Taylor</h3>
-                            <a href="shomari.html" class="btn btn-primary">
-                                <i class="fas fa-arrow-right"></i>
-                                View Profile
-                            </a>
+                    <div class="weird-grid">
+                        <div class="stage-panel">
+
+                            <div class="researcher-cards">
+                                <div class="researcher-card shomari-card">
+                                    <h3>Shomari Taylor</h3>
+                                    <a href="shomari.html" class="btn btn-primary">
+                                        <i class="fas fa-arrow-right"></i>
+                                        View Profile
+                                    </a>
+                                </div>
+                                <div class="researcher-card seth-card">
+                                    <h3>Seth Shaw</h3>
+                                    <a href="seth.html" class="btn btn-primary">
+                                        <i class="fas fa-arrow-right"></i>
+                                        View Profile
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="researcher-card seth-card">
-                            <h3>Seth Shaw</h3>
-                            <a href="seth.html" class="btn btn-primary">
-                                <i class="fas fa-arrow-right"></i>
-                                View Profile
-                            </a>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Shomari Taylor and Seth Shaw</p>
+        </div>
+    </footer>
+
+    <div class="page-bird pb-1" aria-hidden="true"></div>
+    <div class="page-bird pb-2" aria-hidden="true"></div>
+    <div class="page-bird pb-3" aria-hidden="true"></div>
+    <div class="page-bird pb-4" aria-hidden="true"></div>
 
     <script src="script.js"></script>
 </body>

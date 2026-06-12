@@ -3,30 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seth Shaw - Researcher Profile</title>
+    <title>Seth Shaw - Swallow Finch Research</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="seth-profile">
+<body class="profile-page seth-profile">
+    <script>
+        (function () {
+            try {
+                if (sessionStorage.getItem('profileEntryFromNav') === '1') {
+                    document.body.classList.add('profile-entry-prep');
+                    window.__profileEntryFromNav = true;
+                    sessionStorage.removeItem('profileEntryFromNav');
+                }
+            } catch (_) {}
+        })();
+    </script>
+    <div class="page-entry-wash" aria-hidden="true"></div>
     <header class="header">
-        <nav class="nav">
+        <nav class="nav container">
             <div class="nav-brand">
                 <h1>Seth Shaw</h1>
-                <span class="nav-subtitle">Research Profile</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="shomari.html" class="nav-link">Shomari</a></li>
-                <li><a href="seth.html" class="nav-link active">Seth</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span class="nav-subtitle">Research Portfolio</span>
             </div>
         </nav>
     </header>
+
+    <nav class="profile-float-nav" aria-label="Profile page navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="shomari.html" class="nav-link">Shomari</a></li>
+            <li><a href="seth.html" class="nav-link active">Seth</a></li>
+        </ul>
+    </nav>
 
     <main>
         <!-- New Header Section with Headshot and Personal Statement -->
@@ -75,7 +87,7 @@
                     <div class="content-card">
                         <h3>Poster</h3>
                         <div class="poster-container">
-                            <div class="poster-image-container">
+                            <div class="poster-image-container" onclick="openSethPosterModal()">
                                 <img src="SPS SeCAB Male Sociality Poster Smaller.png" alt="Seth Shaw Research Poster" class="poster-image" onclick="openSethPosterModal()">
                                 <div class="poster-overlay">
                                     <i class="fas fa-expand"></i> Click to enlarge
@@ -140,7 +152,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Seth Shaw. All rights reserved.</p>
+            <p>Seth Shaw</p>
         </div>
     </footer>
 
